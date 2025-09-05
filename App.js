@@ -1,6 +1,8 @@
 import React, { useState} from 'react';
-import { SafeAreaView, View, Text, TouchableOpacity, StyleSheet, ScrollView, TextInput, Alert } from 'react-native';export default function App() {
+import { SafeAreaView, View, Text, TouchableOpacity, StyleSheet, ScrollView, TextInput, Alert } from 'react-native';
+export default function App() {
   const [pagina, setPagina] = useState('home');
+
   return (
     <SafeAreaView style={styles.container}>
     <Header pagina={pagina} setPagina={setPagina} />
@@ -14,10 +16,11 @@ import { SafeAreaView, View, Text, TouchableOpacity, StyleSheet, ScrollView, Tex
 </SafeAreaView>
  );
 }
+
 function Header({pagina, setPagina })  {  
   return (
     <View style={styles.header}>
-      <Text style={styles.headerTitle}>MMA</Text>
+      <Text style={styles.headerTitle}> MMA </Text>
     <View style={styles.nav}>
 {['home', 'sobre', 'servicos', 'contato'].map((p) => (
   <TouchableOpacity
@@ -31,21 +34,41 @@ function Header({pagina, setPagina })  {
     </View>
   );
 }
+
 function Home() {
   return (
     <View style={styles.section}>
      <Text style={styles.sectionTitle}> Bem vindo a MMA!</Text>
-      <Text> Somos lideres em computadores tecnologicos para o seu negocio!</Text>
+      <Text> Na MMA somos líderes em computadores tecnológicos 
+        criados para impulsionar o seu negócio.
+         Unimos inovação, performance e um design
+          moderno para entregar soluções que acompanham o ritmo do futuro.
+         Aqui, tecnologia é mais
+          do que ferramenta: 
+          é o motor das suas conquistas!</Text>
     </View>
   );
 }
+
 function Sobre() {
   return (
     <View style={styles.section}>
       <Text style={styles.title}> sobre nós </Text>
+      <Text>Fundada em 2025, a MMA surgiu com a missão
+         de simplificar a tecnologia e torná-la acessível,
+          prática e cheia de estilo.
+         Somos uma empresa jovem, mas com grandes ideias:
+         criar computadores potentes,
+          modernos e prontos para qualquer desafio
+           seja no game, no trabalho ou no dia a dia.
+        Aqui, acreditamos que tecnologia não é só ferramenta, é parte da vida.
+       Por isso, cada projeto da MMA
+       é pensado para entregar velocidade, inovação e experiência única. 
+       Estamos só começando, mas já com os olhos no futuro.</Text>
     </View>
   );
 }
+
 function Servicos() {
   return (
     <View style={styles.section}>
@@ -56,6 +79,7 @@ function Servicos() {
     </View>
   );
 }
+
 function Contato() {
   const[nome, setNome] = React.useState('');
   const[email, setEmail] = React.useState('');
@@ -82,7 +106,7 @@ function Contato() {
         />
       <TextInput 
         style={styles.input}
-        placeholder='email' 
+        placeholder='Email' 
         value={email} 
         onChangeText={setEmail} 
         keyboardType='email-address'
@@ -100,6 +124,7 @@ function Contato() {
         </View>
         );
 }
+
 function Footer() {
   return (
     <View style={styles.footer}>
@@ -107,7 +132,9 @@ function Footer() {
     </View>
   );
 }
+
 const styles = StyleSheet.create({
+
   container: {flex: 1, backgroundColor: '#f4f7fa' },
   header: {backgroundColor: '#004080', padding: 15}, 
   headerTitle: {color: 'white', fontSize: 24, fontWeight: 'bold', marginBottom: 10 },
